@@ -45,14 +45,13 @@
                 <p>-대소문자, 띄어쓰기 구분없이 검색가능</p>
                 <p>-<span class="danger">[주의]</span>가 표기된 문제는 헷갈리기 쉽거나 오답일 가능성이 있으니 다시 확인</p>
                 <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <input class="form-control me-sm-2" type="search" name="search_field" placeholder="Search">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
                 <div class="result_box">
                     데이터가 없습니다.
-                    <%
-                   			
-                    %>
+                    <% String info = request.getParameter("input_search"); %>
+                    <%=request.getParameter(info) %>
                 </div>
                 
             </div>
