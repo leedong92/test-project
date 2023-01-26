@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.sql.*" %>
     <%@ page import="java.util.*" %>
-    <%@ include file="dbconn.jsp" %>
+    
 <!DOCTYPE html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <html lang="en">
@@ -29,11 +29,6 @@
 		}
              
     </style>
-    <link rel="stylesheet" href="css/autocomplete.css">
-    <!-- css에는 autocomplet의 요소를 만들떄 필요한 scrpit가 담겨져 있습니다. -->
-    <script type="text/javascript" src="js/autocomplate.js"></script>
-    <!-- css에는 autocomplet의 요소의 샘플 json의 값이 담겨져 있습니다. -->
-    <script type="text/javascript" src="js/animal.js"></script>
 </head>
 <body>
     <div class="headerH">
@@ -56,8 +51,8 @@
                 <p>-검색 후 엔터키를 누르면 초기화</p>
                 <p>-대소문자, 띄어쓰기 구분없이 검색가능</p>
                 <p>-<span class="danger">[주의]</span>가 표기된 문제는 헷갈리기 쉽거나 오답일 가능성이 있으니 다시 확인</p>
-                <form class="d-flex" action="search_question">
-                    <input class="form-control me-sm-2" type="search" id="search_field" placeholder="Search" onkeyup="addQuestionList()">
+                <form class="d-flex" action="search_question.jsp">
+                    <input class="form-control me-sm-2" type="search" name="search_field" placeholder="Search">
                    		
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -85,13 +80,5 @@
         </div>
         
     </div>
-    <script>
-        
-        function addQuestionList(){
-        	const name = document.getElementById('search_field').value;
-        	document.getElementById("result_box").innerText = name;
-        }
-        
-    </script>
 </body>
 </html>
